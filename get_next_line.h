@@ -3,13 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpham <mpham@student.42.fr>                +#+  +:+       +#+        */
+/*   By: minh <minh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:49:42 by mpham             #+#    #+#             */
-/*   Updated: 2017/12/08 13:50:41 by mpham            ###   ########.fr       */
+/*   Updated: 2017/12/17 14:53:32 by minh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define BUFF_SIZE 32
+#ifndef GET_NEXT_LINE_H
+#define GET_NEXT_LINE_H
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include "libft/libft.h"
+#include <limits.h>
+#include <stdio.h> 
+
+#define BUFF_SIZE 1
 
 int     get_next_line(const int fd, char **line);
+
+#endif
