@@ -6,7 +6,7 @@
 /*   By: mpham <mpham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:38:11 by mpham             #+#    #+#             */
-/*   Updated: 2017/12/18 16:36:54 by mpham            ###   ########.fr       */
+/*   Updated: 2017/12/18 17:22:50 by mpham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,19 +62,13 @@ int				get_next_line(const int fd, char **line)
 	}
 	if (ret == -1)
 		return (-1);
+	*line = (ft_strchr(str, '\n')) ? ft_from_start_to_n(str) : ft_strdup(str);
 	if (ft_strchr(str, '\n'))
-	{
-		*line = ft_from_start_to_n(str);
 		str = ft_from_n_to_finish(str);
-	}
 	else
 	{
 		if (ret == 0 && *str == '\0')
-		{
-			*line = NULL;
 			return (0);
-		}
-		*line = str;
 		ft_strdel(&str);
 	}
 	return (1);
