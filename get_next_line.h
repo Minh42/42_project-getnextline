@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minh <minh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mpham <mpham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:49:42 by mpham             #+#    #+#             */
-/*   Updated: 2017/12/17 14:53:32 by minh             ###   ########.fr       */
+/*   Updated: 2017/12/18 09:58:25 by mpham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@
 #include <fcntl.h>
 #include "libft/libft.h"
 #include <limits.h>
-#include <stdio.h> 
 
-#define BUFF_SIZE 1
+#define BUFF_SIZE 20
 
 int     get_next_line(const int fd, char **line);
 

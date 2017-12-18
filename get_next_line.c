@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minh <minh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mpham <mpham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:38:11 by mpham             #+#    #+#             */
-/*   Updated: 2017/12/17 22:52:03 by minh             ###   ########.fr       */
+/*   Updated: 2017/12/18 09:45:44 by mpham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ static void		*ft_realloc(void *str)
     if (!(tmp = ft_strnew(ft_strlen(str))))
         return (0);
     ft_strcpy(tmp, str);
-    str = NULL;
+    //str = NULL;
     if (!(str = ft_strnew(ft_strlen(tmp) + BUFF_SIZE)))
         return (0);
     ft_strcpy(str, tmp);
     return (str);
+    free (str);
 }
 */
 
@@ -60,7 +61,7 @@ int     get_next_line(const int fd, char **line)
         return (-1);
     if (str == NULL)
         str = ft_strnew(BUFF_SIZE);
-    while ((ret = read(fd, buf, BUFF_SIZE)) && (!ft_strchr(str, '\n')))
+    while ((ret = read(fd, buf, BUFF_SIZE)))
     {
         buf[ret] = '\0';
         str = ft_strjoin(str, buf);
@@ -69,7 +70,7 @@ int     get_next_line(const int fd, char **line)
     } 
     if (ft_strchr(str, '\n'))
     {
-        *line = ft_strdup(ft_from_start_to_n(str)));
+        *line = ft_strdup(ft_from_start_to_n(str));
         str = ft_from_n_to_finish(str);
     }
     else
