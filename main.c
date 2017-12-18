@@ -6,7 +6,7 @@
 /*   By: mpham <mpham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:57:03 by mpham             #+#    #+#             */
-/*   Updated: 2017/12/18 09:57:16 by mpham            ###   ########.fr       */
+/*   Updated: 2017/12/18 12:47:41 by mpham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int     main(int argc, char** argv)
 {
     int     fd;
     char    *line;
+    int     i;
 
     if (argc != 2)
         ft_putstr("too many or too few arguments\n");
@@ -24,12 +25,12 @@ int     main(int argc, char** argv)
     {
         ft_putstr("open() failed\n");
     }
-    while (get_next_line(fd, &line) == 1)
-	{
-		ft_putendl(line);
-		free(line);
-	}
-
+    i = 0;
+    while (get_next_line(fd, &line) > 0)
+    {
+        printf("%d %s\n", i++, line);
+    }
+    free(line);
     /*
 	while (get_next_line(fd, &line) > 0)
 	{

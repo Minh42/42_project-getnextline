@@ -6,7 +6,7 @@
 /*   By: mpham <mpham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:49:42 by mpham             #+#    #+#             */
-/*   Updated: 2017/12/18 09:58:25 by mpham            ###   ########.fr       */
+/*   Updated: 2017/12/18 15:26:40 by mpham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 #include <fcntl.h>
 #include "libft/libft.h"
 #include <limits.h>
+#include <stdio.h>
 
-#define BUFF_SIZE 20
+#define BUFF_SIZE 32
 
 int     get_next_line(const int fd, char **line);
 
